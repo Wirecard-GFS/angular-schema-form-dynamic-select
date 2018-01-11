@@ -159,9 +159,11 @@
 
         $scope.valueChanged = function(modelValue, scope)
         {
-            let functionName = scope.form.onChange.slice(0, -2);
-            if(scope.$parent.$parent.$parent.$parent.$parent.$parent.$parent[functionName]) {
-                scope.$parent.$parent.$parent.$parent.$parent.$parent.$parent[functionName]();
+            if(scope.form.onChange) {
+                var functionName = scope.form.onChange.slice(0, -2);
+                if (typeof scope.$parent.$parent.$parent.$parent.$parent.$parent.$parent[functionName] === 'function') {
+                    scope.$parent.$parent.$parent.$parent.$parent.$parent.$parent[functionName]();
+                }
             }
             /*
              if (scope.form.onChange && typeof scope.form.onChange == 'function') {
