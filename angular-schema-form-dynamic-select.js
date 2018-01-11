@@ -159,8 +159,9 @@
 
         $scope.valueChanged = function(modelValue, scope)
         {
-            if(scope.$parent.$parent.$parent.$parent.$parent.$parent.$parent.saveRelationship) {
-                scope.$parent.$parent.$parent.$parent.$parent.$parent.$parent.saveRelationship();
+            let functionName = scope.form.onChange.slice(0, -2);
+            if(scope.$parent.$parent.$parent.$parent.$parent.$parent.$parent[functionName]) {
+                scope.$parent.$parent.$parent.$parent.$parent.$parent.$parent[functionName]();
             }
             /*
              if (scope.form.onChange && typeof scope.form.onChange == 'function') {
