@@ -142,7 +142,7 @@ angular.module('schemaForm').controller('dynamicSelectController', ['$scope', '$
 
     $scope.select_model = {};
 
-    console.log("Setting options." + $scope.form.options.toString());
+    //console.log("Setting options." + $scope.form.options.toString());
     $scope.form.options.scope = $scope;
 
     $scope.triggerTitleMap = function () {
@@ -211,7 +211,7 @@ angular.module('schemaForm').controller('dynamicSelectController', ['$scope', '$
 
         // The ui-selects needs to be reinitialized (UI select sets the internalModel and externalModel.
         if ($scope.internalModel) {
-            console.log("Call uiMultiSelectInitInternalModel");
+            //console.log("Call uiMultiSelectInitInternalModel");
             $scope.uiMultiSelectInitInternalModel($scope.externalModel);
         }
     };
@@ -297,7 +297,7 @@ angular.module('schemaForm').controller('dynamicSelectController', ['$scope', '$
                     // In order to work with both $http and generic promises
                     _data = _data.data || _data;
                     $scope.finalizeTitleMap(form, _data, form.options);
-                    console.log('asyncCallback items', form.titleMap);
+                    //console.log('asyncCallback items', form.titleMap);
                 },
                 function (data, status) {
                     if (form.options.onPopulationError) {
@@ -366,7 +366,7 @@ angular.module('schemaForm').controller('dynamicSelectController', ['$scope', '$
     {
 
 
-        console.log("$scope.externalModel: Key: " +$scope.form.key.toString() + " Model: " + supplied_model.toString());
+        //console.log("$scope.externalModel: Key: " +$scope.form.key.toString() + " Model: " + supplied_model.toString());
         $scope.externalModel = supplied_model;
         $scope.internalModel = [];
         if ($scope.form.titleMap) {
